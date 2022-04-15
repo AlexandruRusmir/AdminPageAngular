@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/Product';
+import { RestService } from 'src/app/rest.service';
 
 @Component({
   selector: 'app-products-list',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private rs: RestService) { 
+  }
+
+
+  Products: Product[] = [
+  ];
 
   ngOnInit(): void {
+    this.rs.getProducts().subscribe(
+      (Response) => {
+        console.log(Response);
+        this.Products = Response;
+      }, (error) => {
+        console.log("Eroare!");
+      }
+    );
   }
 
 }
