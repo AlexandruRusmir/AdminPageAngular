@@ -34,3 +34,14 @@ td{
     margin-left: auto;
     margin-right: auto;
   }
+
+.deleteBtn{
+    background-color: rgb(191, 32, 32);
+    font-weight: bold;
+    border-radius: 10%;
+    border-color: rgba(0, 0, 0, 0.481);
+    color:white;
+}
+.deleteBtn:hover{
+    background-color: rgb(246, 52, 52);
+}

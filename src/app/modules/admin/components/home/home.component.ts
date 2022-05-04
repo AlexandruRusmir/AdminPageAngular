@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { Product } from 'src/app/models/Product';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RestService } from 'src/app/rest.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,8 @@ import { RestService } from 'src/app/rest.service';
 })
 export class HomeComponent implements OnInit {
 
-
   productForm = new FormGroup({
+    category: new FormControl(''),
     name: new FormControl(''),
     price: new FormControl(''),
     stock: new FormControl(''),
@@ -27,10 +28,17 @@ export class HomeComponent implements OnInit {
 
   onSubmit(): void{
     if(this.productForm.valid){
-      //apelat constructor pe obiect de tip Product
-      //prod: Product();
-      //this.rs.postProduct(prod);
+          this.rs.postProduct(new Product(this.productForm.value.category, this.productForm.value.name, this.productForm.value.stock, 
+            this.productForm.value.price, this.productForm.value.url)).subscribe(
+            (Response) => {
+              console.log(Response);
+
+            }, (error) => {
+              console.log("Eroare la post!");
+            }
+          );
+          window.location.reload();
     }
 
-}
+  }
 }

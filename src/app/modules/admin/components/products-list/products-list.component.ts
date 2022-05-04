@@ -27,4 +27,14 @@ export class ProductsListComponent implements OnInit {
     );
   }
 
+  deleteProduct(partitionKey: String, rowKey: String): void {
+    this.rs.deleteProductf(partitionKey, rowKey).subscribe(
+      (Response) => {
+        console.log(Response);
+      }, (error) => {
+        console.log("Eroare!");
+      }
+    );
+    //window.location.reload();
+  }
 }

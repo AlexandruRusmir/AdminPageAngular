@@ -19,4 +19,12 @@ export class RestService {
     postProduct(prod: Product) {
         return this.http.post(this.urlProduct, prod);
     }
+
+    deleteProductf(partitionKey: String, rowKey:String) {
+        var query1: String = "?partitionKey=";
+        partitionKey = query1.concat(partitionKey.toString());
+        var query2: String = "&rowKey=";
+        rowKey = query2.concat(rowKey.toString());
+        return this.http.delete(this.urlProduct.concat(partitionKey.toString().concat(rowKey.toString())));
+    }
 }
