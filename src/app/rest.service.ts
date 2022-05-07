@@ -27,4 +27,9 @@ export class RestService {
         rowKey = query2.concat(rowKey.toString());
         return this.http.delete(this.urlProduct.concat(partitionKey.toString().concat(rowKey.toString())));
     }
+
+    updateProductQuantity(prod: Product, removedQuantity: number) {
+        prod.quantity -= removedQuantity;
+        return this.http.put<Product>(this.urlProduct, prod);
+    }
 }

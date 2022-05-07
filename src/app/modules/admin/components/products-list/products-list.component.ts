@@ -35,6 +35,7 @@ export class ProductsListComponent implements OnInit {
         console.log("Eroare!");
       }
     );
-    //window.location.reload();
+    
+    window.location.reload();
   }
 }

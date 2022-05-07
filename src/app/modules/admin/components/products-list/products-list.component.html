@@ -1,5 +1,5 @@
 <body>
-    <div>
+    <div style="margin-top: 50px;">
         <h1 style="text-align:center">Product Table</h1>
         <table>
             <tr>
@@ -18,7 +18,7 @@
                     <td>{{product.quantity}}</td>
                     <td style="background:none"><button (click)="deleteProduct(product.partitionKey, product.rowKey)" class="deleteBtn"><i class="fa fa-minus-circle" aria-hidden="true"></i> Delete </button></td>
                 </tr>
-            </tbody>        
+            </tbody>
         </table>
     </div>
 </body>
