@@ -28,6 +28,8 @@ export class HomeComponent implements OnInit {
 
   onSubmit(): void{
     if(this.productForm.valid){
+      console.log(new Product(this.productForm.value.category, this.productForm.value.name, this.productForm.value.stock, 
+        this.productForm.value.price, this.productForm.value.url));
           this.rs.postProduct(new Product(this.productForm.value.category, this.productForm.value.name, this.productForm.value.stock, 
             this.productForm.value.price, this.productForm.value.url)).subscribe(
             (Response) => {
