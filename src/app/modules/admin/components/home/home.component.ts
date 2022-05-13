@@ -34,7 +34,7 @@ export class HomeComponent implements OnInit {
             this.productForm.value.price, this.productForm.value.url)).subscribe(
             (Response) => {
               console.log(Response);
-
+              window.location.reload();
             }, (error) => {
               console.log("Eroare la post!");
             }
