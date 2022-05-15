@@ -39,7 +39,6 @@ export class HomeComponent implements OnInit {
               console.log("Eroare la post!");
             }
           );
-          //window.location.reload();
     }
 
   }

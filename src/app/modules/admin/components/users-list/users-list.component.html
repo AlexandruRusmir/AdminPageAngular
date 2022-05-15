@@ -1,1 +1,20 @@
-<p>users-list works!</p>
+<body>
+    <div style="margin-top: 50px;">
+        <h1 style="text-align:center">Product Table</h1>
+        <table>
+            <tr>
+                <th>User name</th>
+                <th>E-mail</th>
+                <th>Phone Number</th>
+            </tr>
+            <tbody>
+                <tr *ngFor="let user of Users">
+                    <td>{{user.partitionKey}}</td>
+                    <td>{{user.email}}$</td>
+                    <td>{{user.phone}}</td>
+                    <td style="background:none"><button (click)="deleteUser(user.partitionKey, user.rowKey)" class="deleteBtn"><i class="fa fa-minus-circle" aria-hidden="true"></i> Delete </button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>

@@ -31,12 +31,11 @@ export class ProductsListComponent implements OnInit {
     this.rs.deleteProductf(partitionKey, rowKey).subscribe(
       (Response) => {
         console.log(Response);
-        window.location.reload();
       }, (error) => {
         console.log("Eroare!");
       }
     );
     
-    window.location.reload();
+    window.setTimeout(function(){location.reload()},3000)
   }
 }
