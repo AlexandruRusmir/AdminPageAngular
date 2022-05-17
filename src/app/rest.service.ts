@@ -6,8 +6,8 @@ import { User } from "./models/User";
 @Injectable ({providedIn: 'root'})
 
 export class RestService {
-    urlProduct: string = "https://proiectcolectiv.azurewebsites.net/Products";
-    urlUser: string = "https://proiectcolectiv.azurewebsites.net/Users";
+    urlProduct: string = "https://proiectcolectivapi.azurewebsites.net/Products";
+    urlUser: string = "https://proiectcolectivapi.azurewebsites.net/Users";
 
     constructor(private http: HttpClient) {
     }
